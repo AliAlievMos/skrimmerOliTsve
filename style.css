@@ -1,0 +1,263 @@
+body {
+  background: black;
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header {
+  z-index: 100;
+}
+main {
+  display: flex;
+}
+sapper {
+  position: relative;
+  -webkit-perspective: 1200;
+  perspective: 1200;
+  -moz-transform: perspective(1200px);
+  user-select: none;
+}
+sapper:before {
+  position: absolute;
+  content: "";
+  top: -16%;
+  right: -19%;
+  width: 100px;
+  height: 100px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: rotateZ(180deg);
+}
+.flag {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.flag .cloth {
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 9px solid red;
+  margin-left: 0px;
+  margin-top: -1px;
+}
+.flag .stick {
+  width: 2px;
+  height: 12px;
+  background: black;
+}
+.flag .stand {
+  background: black;
+  width: 8px;
+  height: 2px;
+}
+.game_field {
+  background: #bdbcba;
+  display: inline-block;
+  padding: 5px;
+  transition-duration: 1s;
+  z-index: 100;
+  position: relative;
+  backface-visibility: hidden;
+  border: 3px outset;
+}
+.game_field .top_bar {
+  height: 30px;
+  padding: 5px;
+  margin-bottom: 5px;
+  border: 5px inset #bdbcba;
+  background: #e3e4df;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.game_field .top_bar .smile {
+  width: 30px;
+  height: 30px;
+  background-image: url("https://www.pinclipart.com/picdir/big/10-108549_clipart-yellow-big-image-png-yellow-smiley-face.png");
+  background-size: contain;
+}
+.game_field .top_bar .counter {
+  color: red;
+  background: #1d0101;
+  padding: 4px 6px;
+  font-size: 16px;
+  line-height: 20px;
+  text-lign: center;
+}
+.game_field .field {
+  border: 5px inset #bdbcba;
+  background: #e3e4df;
+  display: grid;
+  grid-template-columns: repeat(8, 32px);
+}
+.game_field .field .cell[status='0'] .flag,
+.game_field .field .cell[status='0'] .hint,
+.game_field .field .cell[status='0'] .bomb {
+  display: none;
+}
+.game_field .field .cell[status='1'] {
+  border: 1px solid gray;
+  width: 26px;
+  height: 26px;
+}
+.game_field .field .cell[status='1'] .flag,
+.game_field .field .cell[status='1'] .bomb {
+  display: none;
+}
+.game_field .field .cell[status='2'] .hint,
+.game_field .field .cell[status='2'] .bomb {
+  display: none;
+}
+.game_field .field .cell[status='3'] .flag,
+.game_field .field .cell[status='3'] .hint {
+  display: none;
+}
+.game_field .field .cell[chrd='false'] .bomb {
+  display: none;
+}
+.game_field .field .cell {
+  padding: 2px;
+  width: 20px;
+  height: 20px;
+  background-color: #bdbcba;
+  border: 4px outset lightgray;
+  cursor: pointer;
+}
+.game_field .field .cell .hint {
+  background: #bfc0bb;
+  color: red;
+  text-align: center;
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 500;
+}
+.game_field .field .cell .hint[hint='1'] {
+  color: blue;
+}
+.game_field .field .cell .hint[hint='2'] {
+  color: green;
+}
+.game_field .field .cell .hint[hint='3'] {
+  color: red;
+}
+.game_field .field .cell .hint[hint='4'] {
+  color: darkblue;
+}
+.game_field .field .cell .hint[hint='5'] {
+  color: brown;
+}
+.game_field .field .cell .hint[hint='6'] {
+  color: BlueViolet;
+}
+.game_field .field .cell .hint[hint='7'] {
+  color: DarkCyan;
+}
+.game_field .field .cell .hint[hint='8'] {
+  color: DarkGoldenRod;
+}
+.game_field .field .cell .bomb {
+  width: 100%;
+  height: 100%;
+  background-image: url('https://c7.uihere.com/files/743/680/59/apptrailers-link-free-android-ifixit-android.jpg');
+  background-size: contain;
+}
+/* таблица рекордов */
+.stat {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  background: #bdbcba;
+  transition-duration: 1s;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  z-index: 100;
+  backface-visibility: hidden;
+  border: 3px outset;
+}
+.stat_title {
+  font-size: 20px;
+  font-weight: 700;
+  height: 70px;
+  text-align: center;
+  color: #282828;
+  line-height: 60px;
+}
+.result {
+  line-height: 18px;
+  font-size: 12px;
+  text-align: center;
+  white-space: pre;
+  color: yellow;
+}
+.dash_board {
+  color: #282828;
+  padding: 5px;
+  border: 5px inset #bdbcba;
+  background: #e3e4df;
+  height: 100%;
+  white-space: pre;
+  margin: 5px;
+  overflow: auto;
+  font-size: 10px;
+  line-height: 14px;
+}
+.arrow-back {
+  width: 40px;
+  transform: rotateY(-180deg);
+  margin: 10px 5px;
+  position: absolute;
+}
+.rotated {
+  transform: rotateY(180deg);
+  transform-style: preserve-3d;
+  z-index: 10;
+}
+input {
+  display: none;
+}
+input:checked + .one {
+  color: red;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+input:checked > .two {
+  color: black;
+  transform: rotateY(0deg);
+}
+.one {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: green;
+  transition-duration: 0.5s;
+}
+.two {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: red;
+  backface-visibility: hidden;
+  transition-duration: 0.5s;
+  transform: rotateY(180deg);
+}
+
+.f {
+  text-align: left;
+  font-family: Athelas, sans-serif;
+  font-size: 30px;
+
+}
+.f > p{
+  line-height: 0.1em;
+}
