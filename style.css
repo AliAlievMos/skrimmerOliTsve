@@ -254,8 +254,9 @@ input:checked > .two {
 
 .f {
   text-align: left;
-  font-family: "PT Mono", sans-serif;
+  font-family: 'Courier New', monospace !important;
   font-size: 30px;
+  font-kerning: none;
 
 }
 .f > p{
