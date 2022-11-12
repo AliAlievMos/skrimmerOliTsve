@@ -254,10 +254,22 @@ input:checked > .two {
 
 .f {
   text-align: left;
-  font-family: Athelas, sans-serif;
+  font-family: "PT Mono", sans-serif;
   font-size: 30px;
 
 }
 .f > p{
   line-height: 0.1em;
+}
+@media all and (max-width: 700px) {
+  .f {
+    font-size: 10px;
+  }
+  #s {
+    font-size: 7px !important;
+  }
+  #t{
+    font-size: 10px !important;
+    padding: 5px !important;
+  }
 }
