@@ -273,4 +273,11 @@ input:checked > .two {
     font-size: 10px !important;
     padding: 5px !important;
   }
+  .emoji{
+    height: 13px !important;
+  }
+}
+.emoji {
+  height: 25px;
+  width: auto;
 }
