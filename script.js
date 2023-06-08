@@ -8,6 +8,24 @@ var bombsNumber = 10;
 
 var finish = false;
 
+
+
+var closeButton = document.getElementById('closeButton');
+var popup = document.getElementById('popup');
+var closeButton1 = document.getElementById('closeButton1');
+var popup1 = document.getElementById('popup1');
+let currentIndexOfPop = 0
+
+let listOfPop = [popup, popup1]
+
+
+closeButton.addEventListener('click', function() {
+  popup.style.display = 'none';
+});
+closeButton1.addEventListener('click', function() {
+  popup1.style.display = 'none';
+});
+
 var check = function(i) {
   // todo сделать функию проверки
   if (i >= 0 && i < size ** 2) {
@@ -191,8 +209,15 @@ var fillField = function(index = 0) {
         //alert("boom!!");
         //cell.attr("status", 3);
         console.log("boom1-" + cell.attr("index") + cell.attr("chrd"));
+        currentIndexOfPop = 0
         boom();
       } else {
+        console.log("HERE")
+        if (listOfPop.length > currentIndexOfPop){
+          let pop = listOfPop[currentIndexOfPop]
+          pop.style.display = 'block';
+          currentIndexOfPop += 1
+        }
         //cell.attr("status", 1);
         open(cell.attr("index"));
       }
