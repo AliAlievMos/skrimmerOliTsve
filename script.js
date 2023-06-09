@@ -157,6 +157,7 @@ var checkFlag = function(index) {
 
 var fillField = function(index = 0) {
   time = 0;
+  currentIndexOfPop = 0
   $(".timer").html(pad(time));
 
   flagsNumber = bombsNumber;
@@ -235,7 +236,6 @@ var fillField = function(index = 0) {
         currentIndexOfPop = 0
         boom();
       } else {
-        console.log("HERE")
         if (listOfPop.length > currentIndexOfPop){
           let pop = listOfPop[currentIndexOfPop]
           pop.style.display = 'block';
