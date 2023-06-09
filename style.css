@@ -47,6 +47,13 @@ main {
   cursor: pointer;
 }
 
+.glitch{
+  background-image: url("./vhs-glitch.gif") ;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 
 sapper {
   position: relative;

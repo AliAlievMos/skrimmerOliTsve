@@ -12,8 +12,8 @@ var finish = false;
 
 var closeButton = document.getElementById('closeButton');
 var popup = document.getElementById('popup');
-// var closeButton1 = document.getElementById('closeButton1');
-// var popup1 = document.getElementById('popup1');
+var closeButton5 = document.getElementById('closeButton5');
+var popup5 = document.getElementById('popup5');
 var closeButton2 = document.getElementById('closeButton2');
 var popup2 = document.getElementById('popup2');
 var closeButton3 = document.getElementById('closeButton3');
@@ -40,6 +40,10 @@ closeButton3.addEventListener('click', function() {
 });
 closeButton4.addEventListener('click', function() {
   popup4.style.display = 'none';
+});
+
+closeButton5.addEventListener('click', function() {
+  popup5.style.display = 'none';
 });
 
 var check = function(i) {
@@ -225,6 +229,9 @@ var fillField = function(index = 0) {
         //alert("boom!!");
         //cell.attr("status", 3);
         console.log("boom1-" + cell.attr("index") + cell.attr("chrd"));
+        if (currentIndexOfPop !== 4){
+          popup5.style.display = 'block';
+        }
         currentIndexOfPop = 0
         boom();
       } else {
