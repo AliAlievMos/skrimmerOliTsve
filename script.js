@@ -12,18 +12,34 @@ var finish = false;
 
 var closeButton = document.getElementById('closeButton');
 var popup = document.getElementById('popup');
-var closeButton1 = document.getElementById('closeButton1');
-var popup1 = document.getElementById('popup1');
+// var closeButton1 = document.getElementById('closeButton1');
+// var popup1 = document.getElementById('popup1');
+var closeButton2 = document.getElementById('closeButton2');
+var popup2 = document.getElementById('popup2');
+var closeButton3 = document.getElementById('closeButton3');
+var popup3 = document.getElementById('popup3');
+var closeButton4 = document.getElementById('closeButton4');
+var popup4 = document.getElementById('popup4');
 let currentIndexOfPop = 0
 
-let listOfPop = [popup, popup1]
+let listOfPop = [popup, popup2, popup3, popup4]
 
 
 closeButton.addEventListener('click', function() {
   popup.style.display = 'none';
 });
-closeButton1.addEventListener('click', function() {
-  popup1.style.display = 'none';
+// closeButton1.addEventListener('click', function() {
+//   popup1.style.display = 'none';
+// });
+
+closeButton2.addEventListener('click', function() {
+  popup2.style.display = 'none';
+});
+closeButton3.addEventListener('click', function() {
+  popup3.style.display = 'none';
+});
+closeButton4.addEventListener('click', function() {
+  popup4.style.display = 'none';
 });
 
 var check = function(i) {
